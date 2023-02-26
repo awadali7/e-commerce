@@ -1,17 +1,18 @@
-import React, { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import React from "react";
+import ArwaHelmet from "../../helpers/ArwaHelmet";
+import Header from "../../includes/Header";
+import styled from "styled-components";
 
-const ArwaLandingPage = lazy(() =>
-	import("../../screens/arwa-landing-page/ArwaLandingPage")
-);
 function WebRouter() {
 	return (
-		<Suspense fallback="">
-			<Routes>
-				<Route exact path="/" component={ArwaLandingPage} />
-			</Routes>
-		</Suspense>
+		<>
+			<ArwaHelmet />
+			<Container id="landing-page">
+				<Header />
+			</Container>
+		</>
 	);
 }
 
 export default WebRouter;
+const Container = styled.section``;
